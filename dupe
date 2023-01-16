@@ -1,0 +1,30 @@
+
+local args = {
+    [1] = {
+        ["QuickFuse"] = true,
+        ["AutoLockLegendary"] = false,
+        ["AutoClick"] = true,
+        ["TwitterVerify"] = false,
+        ["TradeRequest"] = false,
+        ["OtherPetsVisible"] = true,
+        ["HatchAnnouncement"] = true,
+        ["AutoRun"] = false,
+        ["SFXVolume"] = 0.5,
+        ["MusiqueVolume"] = 0.5,
+        ["AutoLockMythical"] = false,
+        ["BuildingsVisible"] = true,
+        ["Inputs"] = {
+            [1] = {workspace}
+        },
+        ["AutoLockSecret"] = false,
+        ["RaceAnnouncement"] = true,
+        ["LobbySpeed"] = true,
+        ["SpeedEffectVisible"] = true,
+        ["YourPetVisible"] = true
+    }
+}
+
+game:GetService("ReplicatedStorage").Knit.Services.GameSettingsService.RF.SaveSettings:InvokeServer(unpack(args))
+while task.wait() do
+    game:GetService("ReplicatedStorage").Knit.Services.GameSettingsService.RF.SaveSettings:InvokeServer(unpack(args))
+end
